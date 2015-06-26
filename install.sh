@@ -1,10 +1,34 @@
-dir=~/dotfiles
-olddir=~/dotfiles_old
-files="bashrc vimrc"
+#!/bin/bash
+############################
+# install.sh
+# This script creates symlings from the home directory to any desired dotfiles in ~/dotfiles
+###########################
+
+############## Variables
+
+newdir=~/dotfiles						# dotfiles directory
+olddir=~/dotfiles_old			# old dotfiles backup directory
+files="bashrc vimrc"			# list of files/folders to symlink in homedir
+###########################
 
 # create dotfiles_old in homedir
-echo "test"
-
-echo "done"
+echo "changing to Home ~"A
+cd ~
+echo "making copy of the existing dotfiles in ~ (HOME)"
+mkdir -p $olddir
+echo "...done"
 
 # change 
+echo "changing to the ~/dotfiles directory"
+cd $dir
+echo "...done"
+
+# move any existing dotfiles in homedir to $olddir directory, then create symlinks
+for file in $files; do
+	echo "Moving $file from ~ to $olddir"
+	mv ~/.$file $olddir/
+	echo "creating symlink to $file in home directory."
+	ln -s $dir/$file ~/.$file
+done
+
+echo "..finished successfully."
