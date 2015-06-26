@@ -8,7 +8,7 @@
 
 newdir=~/dotfiles						# dotfiles directory
 olddir=~/dotfiles_old			# old dotfiles backup directory
-files="bashrc"			# list of files/folders to symlink in homedir
+files="bashrc .vim/vimrc"			# list of files/folders to symlink in homedir
 vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
@@ -32,11 +32,6 @@ for file in $files; do
 	echo "creating symlink to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
-
-# configure vim and install vim-plugins
-echo "copying .vimrc file"
-ls -s $vimdir/vimrc ~/.vimrc
-echo "...done"
 
 # move an existing vim plugins configuration to $oldvimdir directory, then copy the ones from the repostiry
 echo "making a backup for .vim directory"
