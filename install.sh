@@ -38,4 +38,18 @@ echo "copying .vimrc file"
 ls -s $vimdir/vimrc ~/.vimrc
 echo "...done"
 
+# move an existing vim plugins configuration to $oldvimdir directory, then copy the ones from the repostiry
+echo "making a backup for .vim directory"
+cp -r ~/.vim/ $oldvimdir/
+echo "removing .vim directory"
+rm -rf ~/.vim
+echo "copying .vim from the repos"
+cp -r $vimdir ~/
+echo "switching to the new .vim directory"
+cd $vimdir
+echo "loading plugins from repositories"
+env -i git submodule init
+env -i git submodule update
+echo "..done"
+
 echo "..finished successfully."
