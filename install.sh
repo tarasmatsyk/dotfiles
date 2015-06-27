@@ -8,7 +8,7 @@
 
 newdir=~/dotfiles						# dotfiles directory
 olddir=~/dotfiles_old			# old dotfiles backup directory
-files="bashrc"			# list of files/folders to symlink in homedir
+files="bashrc "			# list of files/folders to symlink in homedir
 vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
@@ -43,7 +43,7 @@ echo "...done."
 
 # 3. init all submodules
 echo "changing to the ~/dotfiles directory"
-cd $dir
+cd $newdir
 echo "init .vim repository"
 env -i git submodule init
 env -i git submodule update
@@ -60,7 +60,7 @@ echo "..done"
 # 5. making symlinks
 for file in $files; do
 	echo "creating symlink to $file in home directory."
-	ln -s $dir/$file ~/.$file
+	ln -s $newdir/$file ~/.$file
 done 
 
 echo "creating symlink to $vimdir/vimrc"
