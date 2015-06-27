@@ -5,7 +5,7 @@
 #####################
 
 # Variables
-$componentsToInstall = "vim "
+$componentsToInstall = "vim rbenv"
 #####################
 
 
