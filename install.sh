@@ -13,9 +13,11 @@ vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
 
+if [ $1 = "skipC" ]; then
 # install required components
-echo "Calling aptget.sh script"
-sh ./aptget.sh
+	echo "Calling aptget.sh script"
+	sh ./aptget.sh
+fi
 
 # create dotfiles_old in homedir
 echo "changing to Home ~"A
