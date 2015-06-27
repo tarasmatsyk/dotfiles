@@ -5,7 +5,7 @@
 #####################
 
 # Variables
-$componentsToInstall = "vim rbenv"
+$componentsToInstall = "vim"
 #####################
 
 
@@ -16,5 +16,7 @@ for tempVar in $componentsToInstall do
 	echo "Installing "$tempVar
 	apt-get install $tempVar
 done
+
+bash ./git_clone.sh
 
 echo "..done"
