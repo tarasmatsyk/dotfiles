@@ -39,6 +39,10 @@ for file in $files; do
 	ln -s $dir/$file ~/.$file
 done
 
+# init .vim repository
+env -i git submodule init
+env -i git submodule update
+
 # move an existing vim plugins configuration to $oldvimdir directory, then copy the ones from the repostiry
 echo "making a backup for .vim directory"
 cp -r ~/.vim/ $oldvimdir/
