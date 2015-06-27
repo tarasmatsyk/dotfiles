@@ -19,48 +19,53 @@ if [[ $1 = "skipC" ]]; then
 	sh ./aptget.sh
 fi
 
-# create dotfiles_old in homedir
+# 1. Create backup dirs in homedir
 echo "changing to Home ~"
 cd ~
-echo "create backup dir"
+echo "create backup dirs"
 mkdir -p $olddir
+mkdir -p $oldvimdir
 echo "...done"
 
-# change 
-echo "changing to the ~/dotfiles directory"
-cd $dir
-echo "...done"
-
-# init .vim repository
-env -i git submodule init
-env -i git submodule update
-
-# move any existing dotfiles in homedir to $olddir directory, then create symlinks
+# 2. Move all files into backup dirs
 for file in $files; do
 	echo "Moving $file from Home to $olddir/$file"
 	mv ~/.$file $olddir/
-	echo "creating symlink to $file in home directory."
-	ln -s $dir/$file ~/.$file
 done
+echo "...done."
 
-# move vimrc
+# 2.1 Make a copy of .vim dir
 echo "moving .vimrc from home to $olddir/.vimrc"
 mv ~/.vimrc $olddir/
-echo "creating symlink to $vimdir/vimrc"
-ln -s $vimdir/vimrc ~/.vimrc
-
-# move an existing vim plugins configuration to $oldvimdir directory, then copy the ones from the repostiry
 echo "making a backup for .vim directory"
 cp -r ~/.vim/ $oldvimdir/
-echo "removing .vim directory"
-rm -rf ~/.vim
-echo "copying .vim from the repos"
-cp -r $vimdir ~/
-echo "switching to the new .vim directory"
+echo "...done."
+
+# 3. init all submodules
+echo "changing to the ~/dotfiles directory"
+cd $dir
+echo "init .vim repository"
+env -i git submodule init
+env -i git submodule update
+echo "...done."
+
+# 4. init .vim plugins
+echo "switching to the .vim directory"
 cd $vimdir
 echo "loading plugins from repositories"
 env -i git submodule init
 env -i git submodule update
 echo "..done"
+
+# 5. making symlinks
+for file in $files; do
+	echo "creating symlink to $file in home directory."
+	ln -s $dir/$file ~/.$file
+done 
+
+echo "creating symlink to $vimdir/vimrc"
+ln -s $vimdir/vimrc ~/.vimrc
+echo "creating symlink to $vimdir"
+ln -s $vimdir ~/.vim
 
 echo "..finished successfully."
