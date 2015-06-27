@@ -8,7 +8,7 @@
 
 newdir=~/dotfiles						# dotfiles directory
 olddir=~/dotfiles_old			# old dotfiles backup directory
-files="bashrc .vim/vimrc"			# list of files/folders to symlink in homedir
+files="bashrc"			# list of files/folders to symlink in homedir
 vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
@@ -20,7 +20,7 @@ if [[ $1 = "skipC" ]]; then
 fi
 
 # create dotfiles_old in homedir
-echo "changing to Home ~"A
+echo "changing to Home ~"
 cd ~
 echo "create backup dir"
 mkdir -p $olddir
@@ -31,17 +31,23 @@ echo "changing to the ~/dotfiles directory"
 cd $dir
 echo "...done"
 
+# init .vim repository
+env -i git submodule init
+env -i git submodule update
+
 # move any existing dotfiles in homedir to $olddir directory, then create symlinks
 for file in $files; do
-	echo "Moving $file from ~ to $olddir"
+	echo "Moving $file from Home to $olddir/$file"
 	mv ~/.$file $olddir/
 	echo "creating symlink to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
 
-# init .vim repository
-env -i git submodule init
-env -i git submodule update
+# move vimrc
+echo "moving .vimrc from home to $olddir/.vimrc"
+mv ~/.vimrc $olddir/
+echo "creating symlink to $vimdir/vimrc"
+ln -s $vimdir/vimrc ~/.vimrc
 
 # move an existing vim plugins configuration to $oldvimdir directory, then copy the ones from the repostiry
 echo "making a backup for .vim directory"
