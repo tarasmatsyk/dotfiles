@@ -13,6 +13,10 @@ vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
 
+# install required components
+echo "Calling aptget.sh script"
+sh ./aptget.sh
+
 # create dotfiles_old in homedir
 echo "changing to Home ~"A
 cd ~
