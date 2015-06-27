@@ -22,7 +22,7 @@ fi
 # create dotfiles_old in homedir
 echo "changing to Home ~"A
 cd ~
-echo "making copy of the existing dotfiles in ~ (HOME)"
+echo "create backup dir"
 mkdir -p $olddir
 echo "...done"
 
