@@ -13,7 +13,7 @@ vimdir=~/dotfiles/.vim
 oldvimdir=~/dotfiles_old/.vim
 ###########################
 
-if [ $1 = "skipC" ]; then
+if [[ $1 = "skipC" ]]; then
 # install required components
 	echo "Calling aptget.sh script"
 	sh ./aptget.sh
