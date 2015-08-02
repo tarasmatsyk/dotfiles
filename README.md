@@ -1,4 +1,8 @@
 # dotfiles
+
 This repository contains my dotfiles
 
-## I hate writing documentation, so I will update it later.. somehow
+
+### TODO
+1. Add asciidoc support to vim
+2. Rename terminam_profiles
