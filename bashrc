@@ -143,3 +143,6 @@ export NVM_DIR="/home/taras/.nvm"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# RVM
+source ~/.rvm/scripts/rvm
