@@ -7,3 +7,7 @@
 5. add ~/.gconf/apps/gnome-terminal/profiles +
 6. think about clean up of backed up files
 7. add global gitignore as a reference to dotfiles
+
+
+8. update readme as it is hard to remember how to install it.
+
