@@ -14,6 +14,9 @@ function short_path()
 
 alias default_path='PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "'
 alias ..="cd .." ...="cd ../.." ....="cd ../../.."
+
+# python 3 default
+alias python=python3
 #---------------------------END_CUSTOM_COMMANDS---------------------------------
 
 
