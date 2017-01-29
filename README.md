@@ -2,10 +2,7 @@
 
 This repository contains my dotfiles
 
-
-### TODO
-
-### create symlink example
-``` bash
-ln -s /usr/bin/bar /opt/foo
-```
+Usually I keep here setup for next tools:
+- git configuration
+- vim (neovim) setup
+- bash configuration
