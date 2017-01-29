@@ -1,0 +1,8 @@
+[color]
+	ui = true
+[user]
+	name = tarasmatsyk
+	email = tamatsyk@gmail.com
+[core]
+	editor = nvim
+	excludesfile = /Users/tarasmatsyk/.gitignore_global
