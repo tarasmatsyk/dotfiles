@@ -9,6 +9,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
+Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
+
+Plug 'ludovicchabant/vim-gutentags'
 
 " move code
 " Plug 'matze/vim-move'
@@ -18,8 +22,6 @@ call plug#end()
 
 " Fuzzy search
 nnoremap <C-p> :FZF<CR>
-
-" Neomake setup
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -33,10 +35,20 @@ set mouse=a
 
 autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us textwidth=72
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 syntax enable
 set number showmatch
-set shiftwidth=4 tabstop=4 softtabstop=4 textwidth=120  expandtab autoindent
 let python_highlight_all = 1
+
+" indentation config
+autocmd FileType go setlocal ts=8 tw=120 autoindent
+autocmd FileType python setlocal sw=2 ts=2 sts=4 tw=120 expandtab autoindent
+autocmd FileType javascript setlocal sw=4 ts=4 sts=4 tw=120 expandtab autoindent
+
+" netrw
+set nocompatible
+filetype plugin on
+let g:netrw_preview = 1
+let g:netrw_list_hide= '.*\.swp$,.*\.pyc$'
