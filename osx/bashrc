@@ -1,0 +1,21 @@
+source /usr/local/bin/virtualenvwrapper.sh
+
+alias vim='nvim'
+
+alias codp='cd ~/Documents/code/python'
+alias code='cd ~/Documents/code'
+alias venv='source venv/bin/activate'
+alias rabbit='bash /usr/local/sbin/rabbitmq-server'
+alias redis='redis-server'
+alias onode='workon opennode'
+
+# show current branch
+source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/.nvm/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

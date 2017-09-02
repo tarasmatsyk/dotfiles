@@ -1,0 +1,14 @@
+export PS1='[\u@mbp \W$(__git_ps1)]\$ '
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# virtualenvswrapper
+export WORKON_HOME=${HOME}/.virtualenvs
+export PROJECT_HOME=${HOME}/Documents/code/python/own
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+
+# nvm setup
+export NVM_DIR="${HOME}/.nvm"
+
+
