@@ -1,0 +1,2 @@
+Setup
+1. Copy init.vim to '~/.config/nvim/init.vm'
