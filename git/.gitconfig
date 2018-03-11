@@ -1,8 +1,10 @@
 [color]
 	ui = true
 [user]
-	name = tarasmatsyk
+	name = Taras Matsyk
 	email = tamatsyk@gmail.com
 [core]
 	editor = nvim
 	excludesfile = /Users/tarasmatsyk/.gitignore_global
+[commit]
+	template = /Users/tarasmatsyk/.git-message.txt
