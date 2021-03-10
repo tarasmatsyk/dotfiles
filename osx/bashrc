@@ -1,9 +1,6 @@
 source /usr/local/bin/virtualenvwrapper.sh
 
 alias vim='nvim'
-alias code='cd ~/Documents/code'
-alias codp='cd ~/Documents/code/python'
-alias codz='cd ~/Documents/code/python/ezhome'
 alias env='source ./venv/bin/activate'
 alias redis='redis-server'
 
