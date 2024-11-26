@@ -9,3 +9,6 @@ abbr gst 'git status'
 abbr gcd 'git checkout develop'
 abbr gcm 'git checkout master' 
 abbr gl  'git pull origin'
+
+# pyenv config
+pyenv init - | source
