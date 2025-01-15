@@ -1,0 +1,22 @@
+general.import = [
+  #"~/.config/alacritty/themes/catppuccin-macchiato.toml"
+  #"~/.config/alacritty/themes/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/tokyo-night.toml"
+  #"~/.config/alacritty/themes/tokyo-night-storm.toml"
+]
+
+[window]
+
+dimensions = { columns=120, lines=30 }
+
+[font]
+size = 12
+
+[terminal.shell]
+
+# nushell (?)
+#program = "/opt/homebrew/bin/nu"
+#args = ["-l"]
+
+program = "/opt/homebrew/bin/fish"
+args = ["-l", "-c", "zellij"]
