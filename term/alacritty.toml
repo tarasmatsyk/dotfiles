@@ -1,16 +1,21 @@
 general.import = [
-  #"~/.config/alacritty/themes/catppuccin-macchiato.toml"
+  "~/.config/alacritty/themes/catppuccin-macchiato.toml"
   #"~/.config/alacritty/themes/catppuccin-mocha.toml"
-  "~/.config/alacritty/themes/tokyo-night.toml"
+  #"~/.config/alacritty/themes/tokyo-night.toml"
   #"~/.config/alacritty/themes/tokyo-night-storm.toml"
 ]
 
 [window]
 
-dimensions = { columns=120, lines=30 }
+dimensions = { columns=120, lines=35 }
+position = { x=700, y=400 }
 
 [font]
 size = 12
+normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+
+#[font.normal]
+#family =0 'Hack Nerd Font Mono'
 
 [terminal.shell]
 
